@@ -22,14 +22,14 @@ $(document).ready( function () {
 
 
 
-    $("#SUBMITBUTTON").on("click", function() {
+    $("#submit").on("click", function() {
 
         event.preventDefault();
 
-        name = $("#NAMEINPUT").val().trim();
-        role = $("#ROLEINPUT").val().trim();
-        startDate = $("#DATEINPUT").val().trim();
-        monthlyRate = $("#MONTHLYRATEINPUT").val().trim();
+        name = $("#employeeName").val().trim();
+        role = $("#role").val().trim();
+        startDate = $("#startDate").val().trim();
+        monthlyRate = $("#monthlyRate").val().trim();
         dateAdded = firebase.database.ServerValue.TIMESTAMP;
 
         database.ref().push({
@@ -38,12 +38,11 @@ $(document).ready( function () {
             startDate: startDate,
             monthlyRate: monthlyRate,
             dateAdded: dateAdded,
-            
-
         })
+        console.log(database.ref())
     });
 
-    database.ref().orderByChild("dataAdded").limitToLast(1).on("child-added", function(snapshot) {
+    database.ref().orderByChild("child_added").limitToLast(1).on("child_added", function(snapshot) {
         $("#CONTAINER").empty(); //avoids duplicates 
         // loop through the objects and create a new table row for each object (even if currently there)
 
@@ -57,15 +56,12 @@ $(document).ready( function () {
                 tr.appendChild(td)
             }
             $(".table").appendChild(tr);
-
-
-
-
-
-        
-    }, function(errorObject) {
+        };
+    }), 
+    
+    function(errorObject) {
         console.log("Errors handled: " + errorObject.code);
-      });
+      };
  
 
 
