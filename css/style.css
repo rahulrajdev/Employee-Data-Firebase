@@ -1,18 +1,19 @@
-body, html {
+body{
     height: 100%;
-  }
-  .bg {
-    /* The image used */
-    background-image: url("../images/Calm-Desktop-Wallpaper.jpg");
+        /* The image used */
+        background-image: ("https://www.pixelstalk.net/wp-content/uploads/2016/11/Calm-Desktop-Wallpaper.jpg");
   
-    /* Full height */
-    height: 100%;
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+        /* Full height */
+        height: 100%;
+      
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      
   }
+
+
 .footer {
       bottom: 0;
       width: 100%;
